@@ -17,3 +17,8 @@ Intended Mechanics:
 - If a company achieves victory, their ranking text in the global goals window will turn green
 - If a company fails, their text for all goals will turn green
 - If a certain challenge/goal has a time constraints (i.e. must completed before a certain year), then once that year occurs in the game, all companies who have not already achieved victory will immediately fail
+
+Parameter Configuration:
+- To turn an objective on, change it's value from 0. 0 in the configuration means it's off.
+- There are intentional spaces between each challenge to seperate them and make the configuration window easier to read. It may look like a bug since there are arrows next to the empty line, but it was the only was to allow for empty lines within this window.
+- Goals with money amounts (i.e. company value, money in bank, etc.) are in british pound-sterling in the configuration screen. This is because OpenTTD converts the numbers to "Money", which means the values are converted from the base (which is pounds) into your currency set in the game options. This means putting in 100,000 as a config parameter will make it show as $200,000 USD in the game.
