@@ -3,7 +3,7 @@ Global Objective System is a Game Script (a type of add-on) for the game [OpenTT
 ![goals window](https://user-images.githubusercontent.com/1361714/192644791-af2955d1-4e32-4f70-828c-d65c3bd9906a.png)
 Zuu's [Minimal GS](http://www.tt-forums.net/viewtopic.php?f=65&t=62163) was used to create this script. Although much of the boilerplate template has been changed or built upon, there are still some remenents of his work in the script. OpenTTD community user [dP](https://github.com/ldpl) gave the inspiration for the design of the goals window.
 
-If you find any bugs or issues with the script, feel free to open an issue on GitHub in this repo. If you would like to contribute, you can look at the To Do list at the bottom of this readme; I have marked how difficult each item would be to do in terms of time and effort.
+If you find any bugs or issues with the script, or would like to request features to be added, feel free to open an issue on GitHub in this repo. Also, any contributions are greatly appreciated; If you would like to contribute, you can look at the aforementioned issues list to see what could be fixed/added. asdd
 # Recommended Objectives
 Here are some objectives that I personally found enjoyable during testing and playing:
 - 100 Year Challenge: Achieve a high (900+) performance rating within 100 years (starting around 1940) and be the top performer. Good on a large map with many competing players/ai
@@ -29,17 +29,3 @@ Here are some objectives that I personally found enjoyable during testing and pl
 ## Programming Remarks
 - All of the code has been extensively documented and commented, and is doxygen compatible
 - The term "objective" in the source code refers to each individual goal/challenge within the goal window, while everywhere else it refers to the entire set of challenges (i.e. the set of goals that make up the "objective" of the game)
-
-# To Do
-1. Create an objective for delivering a *specific* cargo, not just any cargo (requires tracking cargo deliveries manually) [Medium]
-2. Create an objective for lifetime cargo [Easy]
-3. Create an objective that combines the previous two [Medium]
-4. Show an actual list of players in multiplayer (requires creating fake vehicle groups, as raw strings don't work; there's a commented section in the source code for this with raw strings) [Hard]
-5. Make the in-game configuration for the script use the player-set currency instead of always pound sterling (see shortcomings #4 for clarification) [Hard (if it's even possible)]
-6. Make a toggable config option to show the story page when the game starts (right now it always does and players don't get a choice) [Easy]
-7. Annnounce in the status bar (like how subsidiaries do) when an objective has expired due to time constraints [Easy]
-8. Add a configuration option to change the update interval of the script, not just always 5 days. [Easy]
-9. Have an indication in the goals window of when the next quarterly update is [Easy]
-10. Custom objective names for a given set of goals [Medium]
-11. Show story page to any player when they join mid-game [Easy]
-12. Fix top performance percentage for victors changing after another company wins [Hard]
