@@ -1,7 +1,7 @@
 # Global Objective System Game Script
 Global Objective System is a Game Script (a type of add-on) for the game [OpenTTD](https://github.com/OpenTTD/OpenTTD "OpenTTD on GitHub"). It gives players a way to create a global challenge/main objective system for all companies in the game to achieve and compete against each other for. It is fully customizable by allowing players to add or remove different challenges to the objective and change goal amounts for each challenge through the Game Script configuration in-game. It tries to mimic and is inspired heavily by the challenge system in Chris Sawyer's Locomotion and RollerCoaster Tycoon 2, while also adding features to it.
 ![goals window](https://user-images.githubusercontent.com/1361714/192644791-af2955d1-4e32-4f70-828c-d65c3bd9906a.png)
-Zuu's [Minimal GS](http://www.tt-forums.net/viewtopic.php?f=65&t=62163) was used to create this script. Although much of the boilerplate template has been changed or built upon, there are still some remenents of his work in the script.
+Zuu's [Minimal GS](http://www.tt-forums.net/viewtopic.php?f=65&t=62163) was used to create this script. Although much of the boilerplate template has been changed or built upon, there are still some remenents of his work in the script. OpenTTD community user [dP](https://github.com/ldpl) gave the inspiration for the design of the goals window.
 
 If you find any bugs or issues with the script, feel free to open an issue on GitHub in this repo. If you would like to contribute, you can look at the To Do list at the bottom of this readme; I have marked how difficult each item would be to do in terms of time and effort.
 # Recommended Objectives
