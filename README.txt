@@ -10,6 +10,7 @@ AS a reconommendation, here are some objectives that I personally found enjoyabl
 - First to 20M: Have 20M in your bank within 30 years. Best with less players (less than 4)
 
 Intended Mechanics:
+- You are allowed to change the GS parameters while in a game, but they won't take affect in exising games, only new ones. You are allowed to change them so that you can modify and intiliaze the game script in existing scenarios (.scn files). This means that once you start a new game with the script, the parameters for that specific game and associated saves will not have any effect.
 - If a company fails or achieves victory (by compelting the objective) they are "taken out" of the competition: their progress will no longer be tracked and they will not be considered when determining the top performace rated player
 - All progress (except for amount of money in the bank) is updated quartlerly; This is because OpenTTD only tracks those on a quarterly basis
 - The script updates everything else approximately every 5 in-game days

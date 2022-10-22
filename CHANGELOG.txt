@@ -1,3 +1,6 @@
+Version 2:
+- Fixed script crashes found while playtesting (these were not listed under GitHub Issues, so any new crashes you find should be reported on GitHub)
+- Allow script to work with exisitng scenarios (also allows parameters to be modified in-game but not take effect in current games).
+
 Version 1:
 - Initial release
-

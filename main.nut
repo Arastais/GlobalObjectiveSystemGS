@@ -135,6 +135,10 @@ function Main::Start()
 		GSStoryPage.Show(_story_id);
 		_story_state = StoryState.SHOWN;
 	}
+	//intialize all starting companies
+	for(local i = GSCompany.COMPANY_FIRST; i <= GSCompany.COMPANY_LAST; i++)
+		if(GSCompany.ResolveCompanyID(i) != GSCompany.COMPANY_INVALID)
+			this.InitCompany(i);
 	
 	// Main Game Script loop
 	local last_loop_date = GSDate.GetCurrentDate();
@@ -243,23 +247,10 @@ function Main::HandleEvents()
 				local company_event = GSEventCompanyNew.Convert(ev);
 				//get the new company's id
 				local company_id = company_event.GetCompanyID();
-				//add a table slot for the new company
-				_company_data.rawset(company_id, {
-					indiv=array(ObjIdx.NUM_OBJ, null),  //the goal ID for the company goal
-					global=array(ObjIdx.NUM_OBJ, null), //the goal ID for the global goal
-					amt=array(ObjIdx.NUM_OBJ, 0), //the raw amount toward the objective
-					failed=array(ObjIdx.NUM_OBJ, false), //if the objective is marked as failed
-					rankings=array(ObjIdx.NUM_OBJ, null), //its rankings relative to other companies
-					victory_cond=VictoryState.NONE //if this company should be ignored when checking for a victory 
-				});
-				//create local goals for the new company
-				_Goals.CreateLocalGoals(company_id);
-				//Run all the updates/checks for the new company
-				this.EndOfYear(true);
-				local q = this.EndOfQuarter(true);
-				this.EndOfDayCycle(true, q);
 				//Log company join
 				Util.Log("New company #" + company_id + " has joined");
+				//Initialize the company
+				this.InitCompany(company_id);
 				break;
 			}
 
@@ -267,24 +258,31 @@ function Main::HandleEvents()
 				//Convert the event
 				local bankrupt_event = GSEventCompanyBankrupt.Convert(ev);
 				//get the bankrupt company's id
-				local company_id = company_event.GetCompanyID();
+				local company_id = bankrupt_event.GetCompanyID();
 				//if the bankrupt company in question hasn't already completed all objectives
-				if(goal_tbl.victory_cond != VictoryState.ACHIEVED){
+				if(_company_data[company_id].victory_cond != VictoryState.ACHIEVED){
 					//mark the company's victory as failed
-					goal_tbl.victory_cond = VictoryState.FAILED;
+					_company_data[company_id].victory_cond = VictoryState.FAILED;
 					//anounce it to them
-					GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.VIC_FAIL_BANKRUPT, i), company_id, GSNews.NR_NONE, company_id);
+					GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.VIC_FAIL_BANKRUPT), company_id, GSNews.NR_NONE, company_id);
 					//update their goal's text color to red
 					UpdateGoalsColor(company_id);
 				}
+				//delete the old company from the data table (since it no longer exists)
+				delete _company_data[company_id];
+				break;
 			}
 			case GSEvent.ET_COMPANY_MERGER: {
 				//Convert the event
 				local merge_event = GSEventCompanyMerger.Convert(ev);
 				//get the old company's id
-				local old_company_id = company_event.GetOldCompanyID();
+				local old_company_id = merge_event.GetOldCompanyID();
 				//delete the old company from the data table (since it has been merged to another one)
-				delete _company_data[old_company_id];
+				//FIXME (Issue #14): when a company is merged, the new company gets the story page shown to them again and is maybe even initalized
+				//I think it may be because the game keeps the old company id and referencing the old id references the new company, though this reuires further testing.
+				if(old_company_id in _company_data)
+					delete _company_data[old_company_id];
+				break;
 			}
 		}
 	}
@@ -474,6 +472,41 @@ function Main::Load(version, tbl)
 
 	//mark which script version the savegame was saved with
 	this._loaded_from_version = version;
+}
+
+/**
+ * Initialize a company in the data table
+ * Init() must be called at least once before this function can be called
+ * @param company_id The id of the company to uintialize
+ */
+function Main::InitCompany(company_id){
+	//don't initialize an exisitng company
+	if(company_id in _company_data) {
+		Util.Log("Ignoring initialization of existing company (#" + company_id + ")");
+		return; 
+	}
+	//don't do anything if the company isn't valid
+	if(GSCompany.ResolveCompanyID(company_id) == GSCompany.COMPANY_INVALID){
+		Util.Log("Tried to initialize invalid company #" + company_id + "!");
+		return;
+	}
+	//add a table slot for the new company
+	_company_data.rawset(company_id, {
+		indiv=array(ObjIdx.NUM_OBJ, null),  //the goal ID for the company goal
+		global=array(ObjIdx.NUM_OBJ, null), //the goal ID for the global goal
+		amt=array(ObjIdx.NUM_OBJ, 0), //the raw amount toward the objective
+		failed=array(ObjIdx.NUM_OBJ, false), //if the objective is marked as failed
+		rankings=array(ObjIdx.NUM_OBJ, null), //its rankings relative to other companies
+		victory_cond=VictoryState.NONE //if this company should be ignored when checking for a victory 
+	});
+	//create local goals for the new company
+	_Goals.CreateLocalGoals(company_id);
+	//Run all the updates/checks for the new company
+	this.EndOfYear(true);
+	local q = this.EndOfQuarter(true);
+	this.EndOfDayCycle(true, q);
+	//Log company join
+	Util.Log("Initialized company #" + company_id);
 }
 
 /**

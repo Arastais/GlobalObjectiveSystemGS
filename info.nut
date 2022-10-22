@@ -27,7 +27,7 @@ class GlobalObjInfo extends GSInfo {
 	function GetDescription() 	{ return "A game script that gives all players/companies a global challenge to achieve as the main objective of the game. Inspired heavily by Chris Sawyer's Locomotion's challenge system."; }
 	function GetVersion()		{ return SELF_VERSION; }
 	function MinVersionToLoad() { return LOWEST_COMPATIBLE_VERSION; }	
-	function GetDate()			{ return "2022-09-20"; }
+	function GetDate()			{ return "2022-10-17"; }
 	function CreateInstance()	{ return "Main"; }
 	function GetShortName()		{ return "AGOS"; } // Must be a unique 4 letter string
 	function GetAPIVersion()	{ return "12"; }
@@ -38,9 +38,9 @@ class GlobalObjInfo extends GSInfo {
 		AddSetting({
 			name = "top", 
 			description = "Be the top performing company",
-			flags = CONFIG_BOOLEAN,
+			flags = CONFIG_INGAME | CONFIG_BOOLEAN,
 			
-			easy_value = 0, 
+			easy_value = 1, 
 			medium_value = 0, 
 			hard_value = 1, 
 			custom_value = 0
@@ -50,7 +50,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "...within this many years",
 			min_value = 0, 
 			max_value = 10000, //10k
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 100, 
@@ -66,9 +66,9 @@ class GlobalObjInfo extends GSInfo {
 			description = "Achieve a certain company value (in GBP)", 
 			min_value = 0, 
 			max_value = 2100000000, //2.1B
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
-			easy_value = 500000, 
+			easy_value = 20000000, 
 			medium_value = 500000, 
 			hard_value = 2000000, 
 			custom_value = 500000
@@ -78,11 +78,11 @@ class GlobalObjInfo extends GSInfo {
 			description = "...within this many years",
 			min_value = 0, 
 			max_value = 10000, //10k
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
-			easy_value = 0, 
+			easy_value = 100, 
 			medium_value = 100, 
-			hard_value = 40, 
+			hard_value = 100, 
 			custom_value = 100
 		});
 		AddSetting({name = "spacer_one", description = "", easy_value = 0, medium_value = 0, hard_value = 0, custom_value = CONFIG_NONE, flags = 0, min_value = 0, max_value = 0});
@@ -93,7 +93,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "Achieve a certain quarterly income (in GBP)", 
 			min_value = 0, 
 			max_value = 2000000000, //2B
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 50000, 
@@ -105,7 +105,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "...within this many years",
 			min_value = 0, 
 			max_value = 10000,
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 100, 
@@ -121,9 +121,9 @@ class GlobalObjInfo extends GSInfo {
 			description = "Achieve a certain performance rating (out of 1000)", 
 			min_value = 0, 
 			max_value = 1000, //1k
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
-			easy_value = 0, 
+			easy_value = 1000, 
 			medium_value = 900, 
 			hard_value = 1000, 
 			custom_value = 900 
@@ -133,9 +133,9 @@ class GlobalObjInfo extends GSInfo {
 			description = "...within this many years",
 			min_value = 0, 
 			max_value = 10000,
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
-			easy_value = 0, 
+			easy_value = 100, 
 			medium_value = 100, 
 			hard_value = 40, 
 			custom_value = 100
@@ -149,7 +149,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "Deliver a certain amount of any cargo in a single quarter", 
 			min_value = 0, 
 			max_value = 1000000, //1M
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 1000, 
@@ -161,7 +161,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "...within this many years",
 			min_value = 0, 
 			max_value = 10000,
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 100, 
@@ -177,7 +177,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "Have a certain amount of money in the bank (minus loan; in GBP)", 
 			min_value = 0, 
 			max_value = 2100000000, //2.1B
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 5000000, 
@@ -189,7 +189,7 @@ class GlobalObjInfo extends GSInfo {
 			description = "...within this many years",
 			min_value = 0, 
 			max_value = 10000,
-			flags = 0,
+			flags = CONFIG_INGAME,
 			
 			easy_value = 0, 
 			medium_value = 100, 
