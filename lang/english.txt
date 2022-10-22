@@ -1,0 +1,50 @@
+OBJ_TOP	   					:{BLACK}Be the top performing company{STRING}
+OBJ_COMPANY					:{BLACK}Achieve a company value of {CURRENCY_LONG}{STRING}
+OBJ_INCOME 					:{BLACK}Achieve a quarterly income of {CURRENCY_LONG}{STRING}
+OBJ_RATING 					:{BLACK}Achieve a performance rating of {COMMA} ('{STRING}') out of 1,000{STRING}
+OBJ_CARGO  					:{BLACK}Deliver {COMMA} of any cargo in a single quarter{STRING}
+OBJ_BANK   					:{BLACK}Have {CURRENCY_LONG} in the bank (not including loans){STRING}
+OBJ_YEAR   					: before {NUM}
+
+GOAL_TITLE					:{WHITE}Objective:
+GOAL_GLOBAL					: {WHITE}#{NUM}: {STRING2} {LTBLUE}{COMPANY} {BLACK}{STRING}
+GOAL_GLOBAL_DONE			: {GREEN}#{NUM}: {STRING2} {LTBLUE}{COMPANY} {BLACK}{STRING}
+GOAL_PERCENT				: [{NUM}%]
+GOAL_RANK					: {WHITE}(#{NUM})
+GOAL_PROG_COMMA				:{COMMA}/{COMMA}{STRING}
+GOAL_PROG_CURR				:{CURRENCY_SHORT}/{CURRENCY_SHORT}{STRING}
+GOAL_INPROG					:{YELLOW}{STRING}
+GOAL_DONE					:{GREEN}{STRING}
+GOAL_FAIL					:{RED}{STRING}
+GOAL_SELF_CLIENT			:(You)
+
+VIC_SINGLEPLAYER			:{GREEN}You have completed the objective and won the game!
+VIC_FIRST					:{COMPANY} has won the game and achieved 1st place!
+VIC							:{COMPANY} has completed the objective and achieved {NUM}{STRING} place!
+VIC_FAIL_TIME				:Objective failed! You have ran out of time!
+VIC_FAIL_BANKRUPT			:Objective failed! You have gone bankrupt!
+VIC_SUFFIX_2				:nd
+VIC_SUFFIX_3				:rd
+VIC_SUFFIX_N				:th
+
+STORY_TITLE					:The Challenge & Objective
+STORY_BODY_PRE				:{WHITE}You have stumbled upon a portion of land that poses significant potential to succeed as a transport company. However, your success may not come easy! You must use your expertise to overcome any obstacles and grow your empire; there may even be some competition! Thus, you have been tasked with the following:
+STORY_BODY_POST				:{WHITE}You must complete all goals/challenges within any alloted time constraints to succeed in your objective. {YELLOW}You can check your progress at anytime through the goals window. {WHITE}Can you complete all the proposed challenges and prove yourself as a transport company?
+
+TITLE_TYCOON_C				:Tycoon of the Century
+TITLE_MOGUL					:Mogul
+TITLE_MAGNATE				:Magnate
+TITLE_CAPITALIST			:Capitalist
+TITLE_INDUSTRIALIST			:Industrialist
+TITLE_ENTREPRENEUR			:Entrepreneur
+TITLE_BUSINESSPERSON		:Businessperson
+
+TITLE_TYCOON				:Tycoon
+TITLE_PRESIDENT				:President
+TITLE_CHAIRPERSON			:Chairperson
+TITLE_CHIEF_EXECUTIVE		:Chief Executive
+TITLE_DIRECTOR				:Director
+TITLE_ROUTE_SUPERVISOR		:Route Supervisor
+TITLE_TRANSPORT_COORDINATOR	:Transport Coordinator
+TITLE_TRAFFIC_MANAGER		:Traffic Manager
+TITLE_ENGINEER				:Engineer
