@@ -41,3 +41,4 @@ Here are some objectives that I personally found enjoyable during testing and pl
 8. Add a configuration option to change the update interval of the script, not just always 5 days. [Easy]
 9. Have an indication in the goals window of when the next quarterly update is [Easy]
 10. Custom objective names for a given set of goals [Medium]
+11. Show story page to any player when they join mid-game [Easy]
