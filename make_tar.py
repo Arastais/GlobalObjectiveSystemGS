@@ -31,4 +31,4 @@ tar_name = dir_name + ".tar"
 os.system("mkdir " + dir_name);
 os.system("robocopy . " + dir_name + " *.* /s /xf make_tar.py /xd .git " + dir_name);
 os.system("tar -cf " + tar_name + " " + dir_name);
-os.system("rmdir /s " + dir_name);
+os.system("rmdir /s /q " + dir_name);
