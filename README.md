@@ -1,13 +1,14 @@
 # Global Objective System Game Script
 Global Objective System is a Game Script (a type of add-on) for the game [OpenTTD](https://github.com/OpenTTD/OpenTTD "OpenTTD on GitHub"). It gives players a way to create a global challenge/main objective system for all companies in the game to achieve and compete against each other for. It is fully customizable by allowing players to add or remove different challenges to the objective and change goal amounts for each challenge through the Game Script configuration in-game. It tries to mimic and is inspired heavily by the challenge system in Chris Sawyer's Locomotion and RollerCoaster Tycoon 2, while also adding features to it.
-![Global Objective System goals window](https://user-images.githubusercontent.com/1361714/192644791-af2955d1-4e32-4f70-828c-d65c3bd9906a.png)
+![goals window](https://user-images.githubusercontent.com/1361714/192644791-af2955d1-4e32-4f70-828c-d65c3bd9906a.png)
 Zuu's [Minimal GS](http://www.tt-forums.net/viewtopic.php?f=65&t=62163) was used to create this script. Although much of the boilerplate template has been changed or built upon, there are still some remenents of his work in the script.
 
 If you find any bugs or issues with the script, feel free to open an issue on GitHub in this repo. If you would like to contribute, you can look at the To Do list at the bottom of this readme; I have marked how difficult each item would be to do in terms of time and effort.
-# Recomonded Objectives
+# Recommended Objectives
 Here are some objectives that I personally found enjoyable during testing and playing:
-- 100 year challenge: Achieve a high (900+) performance rating within 100 years and be the top performer on a large map with many competing players/ai
-- Company Value: Achieve a large ($2M+)
+- 100 Year Challenge: Achieve a high (900+) performance rating within 100 years (starting around 1940) and be the top performer. Good on a large map with many competing players/ai
+- Making It Big: Achieve a large ($4M+) company value within maybe 50 years, and be the top performer. Any map size or amount of competition is good for this one.
+- First to 20M: Have 20M in your bank within 30 years. Best with less players (less than 4)
 
 # Quirks & Intricacies
 ## Intended Mechanics
@@ -39,3 +40,4 @@ Here are some objectives that I personally found enjoyable during testing and pl
 7. Annnounce in the status bar (like how subsidiaries do) when an objective has expired due to time constraints [Easy]
 8. Add a configuration option to change the update interval of the script, not just always 5 days. [Easy]
 9. Have an indication in the goals window of when the next quarterly update is [Easy]
+10. Custom objective names for a given set of goals [Medium]
