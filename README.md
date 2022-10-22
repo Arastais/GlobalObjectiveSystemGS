@@ -42,3 +42,4 @@ Here are some objectives that I personally found enjoyable during testing and pl
 9. Have an indication in the goals window of when the next quarterly update is [Easy]
 10. Custom objective names for a given set of goals [Medium]
 11. Show story page to any player when they join mid-game [Easy]
+12. Fix top performance percentage for victors changing after another company wins [Hard]
